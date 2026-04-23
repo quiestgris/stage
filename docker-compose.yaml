@@ -30,7 +30,7 @@ services:
   composer:
     image: composer:2
     volumes:
-      - .:/app
-    working_dir: /app
+      - composer:/composer
+    working_dir: /composer
 volumes:
   db_data:
