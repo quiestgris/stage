@@ -27,10 +27,10 @@ services:
       PMA_PASSWORD: demo
     depends_on:
       - db
-    composer:
-      image: composer:2
-      volumes:
-        - .:/app
-      working_dir: /app
+  composer:
+    image: composer:2
+    volumes:
+      - .:/app
+    working_dir: /app
 volumes:
   db_data:
