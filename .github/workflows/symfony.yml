@@ -17,7 +17,7 @@ jobs:
         run: git config --global --add safe.directory /app
 
       - name: Install dependencies
-        run: docker compose run composer install
+        run: docker compose run composer composer install
 
       - name: Run Symfony checks
         run: docker compose exec -T php php bin/console about
