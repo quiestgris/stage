@@ -19,9 +19,13 @@ jobs:
       - name: Run Symfony checks
         run: docker compose exec -T php php bin/console about
 
-      - name: DB preparation
+      - name: DB Creation
         run: docker compose exec -T php php bin/console do:d:c
+
+      - name: Migration
         run: docker compose exec -T php php bin/console do:mi:mi
+      
+      - name: Loading of Fixtures
         run: docker compose exec -T php php bin/console doctrine:fixtures:load
 
       - name: Test Case Execution
