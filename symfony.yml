@@ -1,0 +1,29 @@
+name: Symfony Docker Test
+
+on: [push]
+
+jobs:
+  symfony:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Start Docker
+        run: docker compose up -d
+
+      - name: Install dependencies
+        run: docker compose exec -T php composer install
+
+      - name: Run Symfony checks
+        run: docker compose exec -T php php bin/console about
+
+      - name: DB preparation
+        run: docker compose exec -T php php bin/console do:d:c
+        run: docker compose exec -T php php bin/console do:mi:mi
+        run: docker compose exec -T php php bin/console doctrine:fixtures:load
+
+      - name: Test Case Execution
+        run: docker compose exec -T php php bin/phpunit
+      
