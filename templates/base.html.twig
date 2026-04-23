@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html id="returning">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Photographie de mariages{% endblock %}</title>
+        <link rel="icon" href="{{asset("imgs/favicon.png")}}">
+        <link rel="stylesheet" href="{{asset("styles/base.css")}}">
+        <link rel="stylesheet" href="{{asset("styles/header.css")}}">
+        <link rel="stylesheet" href="{{asset("styles/footer.css")}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% include "header.html.twig"%}
+        <main>
+            <section class="hero-section">
+                <div class="hero-section-bg-black">
+                    <div class="hero-section-content">
+                        <h1>Photographie &amp; film de mariage</h1>
+                        <h2>Site En Construction</h2>
+                    </div>
+                </div>
+            </section>
+            <div class="content-container">
+            <section class="previous-work-section reveal">
+                <div class="previous-work-section-images">
+                    {% for img in images %}
+                        {% if "previous-work-section" in img.src %}
+                            <img src="{{asset(img.src)}}" alt="Photo de travail précédent">
+                        {% endif %}
+                    
+                    {% endfor %}
+                </div>
+                <a class="see-portfolio-btn" href="{{path("app_portfolio")}}">Voir Portfolio</a>
+            </section>
+            <section class="contact-section reveal">
+                {% for img in images %}
+                    {% if "contact-section-img1" in img.src %}
+	                    <img src="{{asset(img.src)}}" alt="Photo de travail précédent">
+                    {% endif %}
+
+                {% endfor %}
+                <div class="contact">
+                    <h1 class="contact-content">Allons raconter votre histoire</h1>
+                    <p class="contact-information">Ouverture des réservations</p>
+                    <p class="contact-information">2026 - 2027</p>
+                    <a class="contact-button" href="{{path("app_contact")}}">Contacter</a>
+                </div>
+                {% for img in images %}
+	                {% if "contact-section-img2" in img.src %}
+		                <img src="{{asset(img.src)}}" alt="Photo de travail précédent">
+	                {% endif %}
+                {% endfor %}
+            </section>
+            </div>
+        </main>
+        {% include "footer.html.twig"%}
+        <script src="{{asset("scripts/header.js")}}"></script>
+        <script src="{{asset('scripts/base.js')}}"></script>
+        {% endblock %}
+    </body>
+</html>

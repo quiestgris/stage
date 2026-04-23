@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html id="returning">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Photographie de mariages
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{asset("imgs/favicon.png")}}">
+		<link rel="stylesheet" href="{{asset("styles/base.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/header.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/signupPage/signup.css")}}">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+	</html>
+
+
+	{% block body %}
+		{% include "header.html.twig" %}
+		<main>
+			<div class="form-container">
+                    <h1>Confirmation de l'inscription a été envoyé sur votre email indiqué</h1>
+			</div>
+		</div>
+	</main>
+	<script src="{{asset("scripts/header.js")}}"></script>
+	<script src="{{asset("scripts/signupPage/signup.js")}}"></script>
+
+{% endblock %}
+

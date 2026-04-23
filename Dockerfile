@@ -1,0 +1,9 @@
+FROM php:8.3-apache
+# Installer extensions PHP nécessaires
+RUN apt-get update && apt-get install -y \
+ libicu-dev libzip-dev unzip git \
+ && docker-php-ext-install pdo pdo_mysql intl zip \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN a2enmod rewrite
+WORKDIR /var/www/html

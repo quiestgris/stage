@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html id="returning">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Photographie{% endblock %}</title>
+        <link rel="icon" href="{{asset("imgs/favicon.png")}}">
+        <link rel="stylesheet" href="{{asset("styles/header.css")}}">
+        <link rel="stylesheet" href="{{asset("styles/footer.css")}}">
+        <link rel="stylesheet" href="{{asset("styles/contactPage/contact.css")}}">
+        <link rel="stylesheet" href="{{asset("styles/base.css")}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+    {% include "header.html.twig" %}
+    <main>
+        <div class="content-container">
+        <section class="contact-information-section-2">
+            <div class="hero-section-bg-black">
+                <p>iu.olshanova@gmail.com</p>
+                <p>06 13 33 27 52</p>
+            </div>
+        </section>
+        </div>
+    </main>
+    {% include "footer.html.twig" %}
+     <script src="{{asset("scripts/header.js")}}"></script>
+     <script src="{{asset("scripts/base.js")}}"></script>     
+    </body>
+    
+</html>

@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    padding: 14px 0;
+    z-index: 2;
+    top: 0;
+    transition: padding 0.3s ease-in, transform 0.3s ease-in;
+}
+
+header a {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0;
+    font-family: "Cormorant Garamond";
+    letter-spacing: 0.36cap;
+    font-weight: 500;
+    line-height: 28px;
+    padding: 34px 0;
+    color: #343b2f;
+}
+
+
+

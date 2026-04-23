@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html id="returning">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Photographie de mariages
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{asset("imgs/favicon.png")}}">
+		<link rel="stylesheet" href="{{asset("styles/base.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/header.css")}}">
+<link rel="stylesheet" href="{{asset("styles/loginPage/login.css")}}">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+	</html>
+
+{% block body %}
+    {% include "header.html.twig" %}
+<main>
+<form method="POST" class="login-form">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1 class="login-title h3 mb-3 font-weight-normal">Connectez-vous, s'il-vous-plaît</h1>
+    <div class="login-form-input-field">
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    </div>
+    <div class="login-form-input-field">
+    <label for="inputPassword">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </div>
+    <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+    <div class="login-form-checkbox-field">
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" name="_remember_me"> Souvenir
+        </label>
+    </div>
+    </div>
+    <div class="change-pasword-btn">
+        <a href="{{path("app_check_password_code")}}">Changer de mot de passe</a>
+    </div>
+    <button class="btn btn-lg btn-primary login-btn" type="submit">
+        Se connecter
+    </button>
+</form>
+</main>
+<script src="{{asset("scripts/header.js")}}"></script>
+{% endblock %}
+</html>

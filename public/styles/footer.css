@@ -1,0 +1,21 @@
+footer {
+    padding: 40px 0;
+}
+
+footer .content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .content-container a {
+    display: block;
+}
+
+.arrow {
+    transform: rotate(180deg);
+    width: 24px;
+    height: 24px;
+    fill: #343b2f;
+}

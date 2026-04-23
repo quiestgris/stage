@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+ php:
+ image: php:8.3-apache
+ ports:
+ - "8080:80"
+ volumes:
+ - ./src:/var/www/html
+ depends_on:
+ - db
+ db:
+ image: mysql:8.0
+ environment:
+ MYSQL_ROOT_PASSWORD: root
+ MYSQL_DATABASE: stage_project
+ MYSQL_USER: demo
+ MYSQL_PASSWORD: demo
+ volumes:
+ - db_data:/var/lib/mysql
+ phpmyadmin:
+ image: phpmyadmin:latest
+ ports:
+ - "8081:80"
+ environment:
+ PMA_HOST: db
+ PMA_USER: demo
+ PMA_PASSWORD: demo
+volumes:
+ db_data:

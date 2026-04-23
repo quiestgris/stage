@@ -1,0 +1,9 @@
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute
+    mappings:
+        portfolio_images:
+            uri_prefix: /imgs/portfolio
+            upload_destination: '%kernel.project_dir%/public/imgs/portfolio'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

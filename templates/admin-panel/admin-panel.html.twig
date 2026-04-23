@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html id="returning">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Photographie
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{asset("imgs/favicon.png")}}">
+		<link rel="stylesheet" href="{{asset("styles/header.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/footer.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/portfolioPage/portfolio.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/base.css")}}">
+		<link rel="stylesheet" href="{{asset("styles/admin-panel/admin-panel.css")}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
+		<body>
+			<div class="bg-black hide">
+				<div class="logout-question-container hide">
+					<div class="logout-question-window">
+						<p class="logout-question">Voulez-vous vous déconnecter ?</p>
+						<div class="logout-answers">
+							<a href="{{path("app_logout")}}" class="logout-acception-btn">Oui</a>
+							<button class="logout-refuse-btn">Non</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="delete-img-bg-black hide">
+				<div class="delete-img-question-container hide">
+					<div class="delete-img-question-window">
+						<p class="delete-img-question">Etes-vous sûr de supprimer cette image ?</p>
+						<div class="delete-img-answers">
+							<a href="" class="delete-img-acception-btn">Oui</a>
+							<button class="delete-img-refuse-btn">Non</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			{% include "header.html.twig" %}
+
+			<main>
+				<div class="logout-btn-container">
+					<button class="logout-btn">Se déconnecter</button>
+				</div>
+				<div class="content-container">
+					{{ form_start(form) }}
+
+					{{ form_widget(form) }}
+
+					<button class="upload-img-btn hide" type="submit">Charger</button>
+
+					{{ form_end(form) }}
+
+					<section class="portfolio-section">
+						<h1>Portfolio</h1>
+						<div class="portfolio-imgs">
+							{% for img in imgs %}
+								{% if "portfolio" in img.src %}
+									<div class="portfolio-img-container">
+										<button class="delete-img-btn" onclick="imageToDelete = {{img.id}};">
+											<div class="cross">
+												<div class="cross-line"></div>
+												<div class="cross-line reverse"></div>
+											</div>
+										</button>
+										<img src="{{asset(img.src)}}" alt="Photo de travail précédent">
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</section>
+				</div>
+			</main>
+			{% include "footer.html.twig" %}
+			<script src="{{asset("scripts/header.js")}}"></script>
+			<script src="{{asset("scripts/base.js")}}"></script>
+			<script src="{{asset("scripts/admin-panel/admin-panel.js")}}"></script>
+			<script>
+				document.query
+			</script>
+		</body>
+
+	</html>

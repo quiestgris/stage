@@ -1,0 +1,218 @@
+@font-face {
+    font-family: "Cormorant Garamond";
+    src: url(../fonts/Cormorant_Garmarond/CormorantGaramond-Regular.ttf);
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+body {
+    box-sizing: border-box;
+    font-family: "Cormorant Garamond";
+    margin: 0;
+    overflow-x: hidden;
+}
+.content-container {
+    padding: 0 9%;
+}
+
+.bg-gray {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.hide {
+    display: none;
+}
+.flex-justify-content-right {
+    display: flex;
+    justify-content: right;
+}
+.hero-section {
+    background-image: url(../imgs/hero-section.jpeg);
+    background-size: cover;         
+    background-position: left top;      
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-section-bg-black {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-section-content h1 {
+    font-size: 40px;
+    text-align: center;
+    text-wrap: wrap;
+    margin: 0 0 44px;
+    font-weight: 400;
+    color: white;
+}
+
+.hero-section-content h2 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    font-weight: 400;
+    color: #363636;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 2px;   
+}
+
+.previous-work-section {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.previous-work-section-images img {
+    width: 39vw;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-position: center;
+    object-fit: cover;
+}
+
+.previous-work-section-images {
+    display: flex;
+    gap: 12px 12px;
+    flex-wrap: wrap;
+}
+.see-portfolio-btn {
+    margin-top: 20px;
+    border: none;
+    font-size: 32px;
+    padding: 20px;
+    width: 15%;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in;
+}
+
+.see-portfolio-btn:hover {
+    background-color: black;
+    color: white;
+}
+.contact-section {
+    display: flex;
+    gap: 12px;
+    margin-top: 20%;
+}
+
+.contact-section img {
+    width: 24%;
+    padding: 40px 0;
+}
+.contact {
+    background-color: #f4f5f0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-content {
+    font-size: 32px;
+    font-weight: 400;
+    color: #343b2f;
+    text-align: center;
+}
+
+.contact-information {
+    font-size: 22px;
+    color: #343b2f;
+    margin: 0;
+}
+
+.contact-button {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 20px 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.38px;
+    font-weight: 500;
+    margin-top: 64px;
+    transition: background-color 0.5s ease-in, color 0.3s ease-in;
+}
+
+.contact-button:hover {
+    color: white;
+    background-color: #C5AA8A;
+    border: 1px solid transparent;
+} 
+
+@media screen and (max-width: 990px) {
+    .hero-section-content {
+        flex-direction: column-reverse;
+    }
+    .hero-section-content h1 {
+        font-size: 32px;
+        margin-top: 40px;
+    }
+    .hero-section-content h2 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-section {          
+        flex-wrap: wrap;  
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+  .contact {
+    order: -1;
+    flex: 2;              
+    flex-basis: 100%;           
+  }
+
+  .contact-section img {
+    width: 47%;            
+    padding: 0;           
+    object-fit: cover;     
+  }
+}
+
+@media screen and (max-width: 474px) {
+    .hero-section-content h1 {
+        font-size: 24px;
+    }
+}

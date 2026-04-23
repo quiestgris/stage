@@ -1,0 +1,33 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-form-input-field {
+    display: flex;
+    flex-direction: column;
+}
+.login-form label {
+    font-size: 32px;
+}
+
+.login-form-input-field input {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.login-form-checkbox-field {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.login-btn {
+    border: none;
+    font-size: 32px;
+    padding: 20px;
+    color: white;
+    background-color: rgb(105, 105, 105);
+}
