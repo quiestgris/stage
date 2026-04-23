@@ -29,6 +29,7 @@ services:
       - db
   composer:
     image: composer:2
+    user: root
     volumes:
       - .:/app
     working_dir: /app
