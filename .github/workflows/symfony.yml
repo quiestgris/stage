@@ -13,6 +13,9 @@ jobs:
       - name: Start Docker
         run: docker compose up -d
 
+      - name: Configure Git
+        run: git config --global --add safe.directory /app
+
       - name: Install dependencies
         run: docker compose run composer install
 
