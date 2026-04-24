@@ -14,7 +14,7 @@ jobs:
         run: docker compose up -d
 
       - name: Install Dependencies
-        run: composer install --no-interaction --prefer-dist
+        run: docker compose exec -T php composer install --no-interaction --prefer-dist
 
       - name: Run Symfony checks
         run: docker compose exec -T php php bin/console about
