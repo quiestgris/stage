@@ -22,11 +22,11 @@ jobs:
     ports: ["1025:1025", "8025:8025"]
 
   steps:
-  - uses: actions/checkout@v4
-  - uses: shivammathur/setup-php@v2
-    with:
-    php-version: '8.3'
-    extensions: pdo_mysql, intl
+    - uses: actions/checkout@v4
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+        extensions: pdo_mysql, intl
 
     - name: Run tests
     - run: composer install --no-interaction --prefer-dist
