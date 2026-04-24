@@ -1,0 +1,29 @@
+jobs:
+  build-and-test:
+  runs-on: ubuntu-latest
+  services:
+  mysql:
+    image: mysql:8.0
+    env:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports: ["3306:3306"]
+  mailhog:
+    image: mailhog/mailhog
+    ports: ["1025:1025", "8025:8025"]
+
+  steps:
+  - uses: actions/checkout@v4
+  - uses: shivammathur/setup-php@v2
+    with:
+    php-version: '8.3'
+    extensions: pdo_mysql, intl
+
+    - run: composer install --no-interaction --prefer-dist
+    - name: Run tests
+  env:
+    DATABASE_URL: "mysql://test:test@127.0.0.1:3306/test"
+    MAILER_DSN: "smtp://localhost:1025"
+  run: php bin/phpunit --testdox
