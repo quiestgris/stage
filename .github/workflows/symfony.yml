@@ -32,7 +32,7 @@ jobs:
         run: docker compose up -d
       
       - name: Install Composer
-        run: docker compose run composer install --no-interaction --prefer-dist
+        run: docker compose exec -T php composer install --no-interaction --prefer-dist
       
       - name: DB Creation 
         run: docker compose exec -T php bin/console do:d:c
