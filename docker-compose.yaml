@@ -27,10 +27,5 @@ services:
       PMA_PASSWORD: demo
     depends_on:
       - db
-  composer:
-    image: composer:2
-    volumes:
-      - composer:/composer
-    working_dir: /composer
 volumes:
   db_data:
