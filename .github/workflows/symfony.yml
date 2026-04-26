@@ -38,7 +38,7 @@ jobs:
         run: php bin/console doctrine:migrations:migrate
 
       - name: Loading of Fixtures
-        run: php bin/console doctrine:fixture:load
+        run: php bin/console doctrine:fixtures:load
 
       - name: Start of the server
         run: symfony serve
