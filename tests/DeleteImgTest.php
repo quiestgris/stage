@@ -7,6 +7,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use App\DataFixtures\AppFixtures;
+use App\Entity\Admin;
+use App\Entity\Image;
 
 class DeleteImgTest extends WebTestCase
 {

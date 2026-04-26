@@ -11,6 +11,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use App\DataFixtures\AppFixtures;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class UploadImageTest extends WebTestCase
 {
