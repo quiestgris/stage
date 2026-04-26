@@ -40,9 +40,6 @@ jobs:
       - name: Migration
         run: php bin/console doctrine:migrations:migrate --no-interaction
 
-      - name: Install Bundle of Fixtures
-        run: composer require doctrine/doctrine-fixtures-bundle --dev
-
       - name: Loading of Fixtures
         run: php bin/console doctrine:fixtures:load --no-interaction
 
