@@ -5,7 +5,7 @@ namespace App\Tests;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Tests\ORMPurger;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 
 class DeleteImgTest extends WebTestCase
 {
