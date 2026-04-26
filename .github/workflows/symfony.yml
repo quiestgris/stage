@@ -43,6 +43,12 @@ jobs:
       - name: Loading of Fixtures
         run: php bin/console doctrine:fixtures:load --no-interaction
 
+      - name: Run Server
+        run: php bin/console serve
+
+      - name: Wait for the Server
+        run: sleep 30
+
       - name: Run Tests
         run: php bin/phpunit
 
