@@ -5,6 +5,7 @@ namespace App\Tests;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Image;
+use App\Repository\ImageRepository;
 use App\Entity\Admin;
 use App\Entity\AdminRepository;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;

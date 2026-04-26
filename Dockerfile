@@ -23,4 +23,6 @@ RUN composer install --no-dev --optimize-autoloader
 # Donner les droits d'accès aux dossiers var/cache et var/log
 RUN chown -R www-data:www-data /var/www/html/var
 
+RUN symfony serve
+
 EXPOSE 80

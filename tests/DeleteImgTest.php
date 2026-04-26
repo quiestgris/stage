@@ -52,7 +52,7 @@ class DeleteImgTest extends WebTestCase
 
         $deleteBtns = $crawler->filter('.delete-btn');
 
-        $deleteBtn = $deleteBtns->eq($deleteBtns[rand(0, $deleteBtns->count() - 1)]);
+        $deleteBtn = $deleteBtns->eq(rand(0, $deleteBtns->count() - 1));
 
         $client->click($deleteBtn);
 
