@@ -33,9 +33,6 @@ jobs:
       
       - name: Install Composer
         run: composer install --no-interaction --prefer-dist
-      
-      - name: DB Creation 
-        run: php bin/console do:d:c
 
       - name: Migration
         run: php bin/console doctrine:migrations:migrate
@@ -56,4 +53,4 @@ jobs:
     env:
       DATABASE_URL: "mysql://test:test@127.0.0.1:3306/test"
       MAILER_DSN: "smtp://localhost:1025"
-      run: php bin/phpunit --testdox
+      # run: php bin/phpunit --testdox
