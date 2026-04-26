@@ -9,6 +9,7 @@ use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use App\DataFixtures\AppFixtures;
 use App\Entity\Admin;
 use App\Entity\Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class DeleteImgTest extends WebTestCase
 {
