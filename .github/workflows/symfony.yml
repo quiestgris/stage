@@ -44,9 +44,9 @@ jobs:
         run: php bin/console doctrine:fixtures:load --no-interaction
 
       - name: Run Tests
-        run: php bin/phpunit
-        APP_ENV: test
-
+        run: php bin/phpunit --env=test
+        env:
+          APP_ENV: test
 
     # env:
     #   DATABASE_URL: "mysql://root:root@127.0.0.1:3306/test"
