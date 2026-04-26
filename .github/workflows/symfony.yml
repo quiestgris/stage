@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php
         with:
           php-version: '8.4'
           extensions: pdo_mysql, intl
@@ -44,7 +44,7 @@ jobs:
         run: php bin/console doctrine:fixtures:load --no-interaction
 
       - name: Run Server
-        run: php bin/console serve
+        run: symfony serve
 
       - name: Wait for the Server
         run: sleep 30
