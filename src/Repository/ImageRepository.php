@@ -16,7 +16,7 @@ class ImageRepository extends ServiceEntityRepository
         parent::__construct($registry, Image::class);
     }
 
-    public function findBySrcContains(string $substring): ?array
+    public function findBySrcContains(string $substring): ?Image
     {
         return $this->createQueryBuilder('i')
             ->where('i.src LIKE :substr')
